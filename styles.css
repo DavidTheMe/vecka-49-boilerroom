@@ -1,0 +1,108 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling on the body */
+  }
+  
+  header {
+    background: #44136C;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  header h1 {
+    color: #B965E1;
+    margin: 0;
+  }
+  
+  /* Container fills the viewport below the header */
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px); /* Subtract header height */
+    overflow-y: auto; /* Make content scrollable */
+    padding: 20px;
+  }
+  
+  /* Flexbox layout for tables */
+  .tables {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Table container */
+  .table-container {
+    width: 48%;
+    max-width: 700px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: white;
+    width: 100%;
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  button {
+    margin-top: 15px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .move-btn {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 5px;
+    float: right;
+  }
+  
+  .move-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+    color: #fff;
+    float: right;
+  }
+  
+  .delete-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+  .task-card {
+    width: 100%;
+    background-color: #622693;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px; /* Add some spacing between cards */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between task name and buttons */
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add some shadow for emphasis */
+  }
