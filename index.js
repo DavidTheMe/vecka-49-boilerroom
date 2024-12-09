@@ -1,10 +1,22 @@
 var toDoTable = document.getElementById("to-do-table");
 var completedTable = document.getElementById("completed-table");
+var taskAddButton = document.getElementById("add-task-button");
+// Add an event listener to the button for the 'click' event
+taskAddButton.addEventListener("click", function () {
+    OpenInputFieldToAddTask();
+});
+var taskInput = document.getElementById("add-task-input");
+var taskDoneButton = document.getElementById("add-task-done-button");
+taskAddButton.addEventListener("click", function () {
+    OpenInputFieldToAddTask();
+});
+taskDoneButton.addEventListener("click", function () {
+    FinnishAddingTask();
+});
 function CreateCardElement(taskName, cardType) {
     // Create the task card container
     var taskCard = document.createElement("div");
     taskCard.className = "task-card";
-    // Create the task title
     var taskTitle = document.createElement("h2");
     taskTitle.textContent = taskName;
     // Create the button container
@@ -47,8 +59,15 @@ function SwitchTable(taskName, currentCardType, currentElement) {
     }
     currentElement.remove();
 }
-// Add an event listener to the button for the 'click' event
-var button = document.getElementById("add-task-button");
-button.addEventListener("click", function () {
-    toDoTable.appendChild(CreateCardElement(prompt(), "toDo"));
-});
+function OpenInputFieldToAddTask() {
+    taskAddButton.setAttribute("class", "not-visible");
+    taskInput.setAttribute("class", "visible");
+    taskDoneButton.setAttribute("class", "visible");
+}
+function FinnishAddingTask() {
+    toDoTable.append(CreateCardElement(taskInput.value, "toDo"));
+    taskInput.value = "";
+    taskAddButton.setAttribute("class", "visible");
+    taskInput.setAttribute("class", "not-visible");
+    taskDoneButton.setAttribute("class", "not-visible");
+}
